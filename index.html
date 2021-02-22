@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mesto</title>
+    <link rel="stylesheet" href="./pages/index.css">
+</head>
+<body class="root">
+    <section class="popup">
+        
+            <form class="popup__container">
+                <img src="./images/icons/cross.svg" alt="закрыть форму" class="popup__exit">
+                <h2 class="popup__title">Редактировать профиль</h2>
+                <fieldset class="popur__input-container">
+                    <input type="text" class="popup__name">
+                    <input type="text" class="popup__profession">
+                    <input type="submit" class="popup__save">
+                    
+                </fieldset>   
+            </form>
+        
+    </section>
+    <div class="page">
+        <header class="header">
+            <a href="#" class="header__logo"></a>
+            <!--<a href="#" target="_self" class="header__link"><img src="./images/logo-white.svg" alt="Логотип Mesto" class="header__logo"></a>-->
+        </header>
+        
+        <main class="content">
+            
+            <section class="profile">
+            
+                <div class="profile__info-box">
+                    <img src="./images/avatar.jpg" alt="Аватар профиля" class="profile__avatar">
+                    <div class="profile__info">
+                        <div class="profile__flex-box">
+                            <h1 class="profile__name">Жак-Ив Кусто</h1>
+                            <button class="profile__editt-botton"></button>
+                        </div>
+                        <p class="profile__profession">Исследователь океана</p>
+                    </div>
+                </div>
+                <button class="profile__add-button"></button>
+            </section>
+            
+            <section>
+                <ul class="elements">
+                   <li class="element">
+                       <img src="./images/image1-6.jpg" alt="Карачаевск" class="element__image">
+                       <div class="element__info">
+                            <h2 class="element__title">Карачаево-Черкесия</h2>
+                            <img src="./images/icons/heart.svg" alt="Кнопка Мне нарвится" class="element__heart">
+                       </div>
+                   </li>
+                   <li class="element">
+                       <img src="./images/image2-4.jpg" alt="Карачаевск" class="element__image">
+                       <div class="element__info">
+                            <h2 class="element__title">Гора Эльбрус</h2>
+                            <img src="./images/icons/heart.svg" alt="Кнопка Мне нарвится" class="element__heart">
+                       </div>
+                       
+                   </li>
+                   <li class="element">
+                        <img src="./images/image3-5.jpg" alt="Карачаевск" class="element__image">
+                        <div class="element__info">
+                            <h2 class="element__title">Домбай</h2>
+                            <img src="./images/icons/heart.svg" alt="Кнопка Мне нарвится" class="element__heart">
+                        </div>
+                        
+                   </li>
+                   <li class="element">
+                        <img src="./images/image2-4.jpg" alt="Карачаевск" class="element__image">
+                        <div class="element__info">
+                            <h2 class="element__title">Гора Эльбрус</h2>
+                            <img src="./images/icons/heart.svg" alt="Кнопка Мне нарвится" class="element__heart">
+                        </div>
+                        
+                   </li>
+                   <li class="element">
+                        <img src="./images/image3-5.jpg" alt="Карачаевск" class="element__image">
+                        <div class="element__info">
+                            <h2 class="element__title">Домбай</h2>
+                            <img src="./images/icons/heart.svg" alt="Кнопка Мне нарвится" class="element__heart">
+                        </div>
+                        
+                   </li>
+                   <li class="element">
+                        <img src="./images/image1-6.jpg" alt="Карачаевск" class="element__image">
+                        <div class="element__info">
+                            <h2 class="element__title">Карачаево-Черкесия</h2>
+                            <img src="./images/icons/heart.svg" alt="Кнопка Мне нарвится" class="element__heart">
+                        </div>
+                        
+                   </li>
+                </ul>
+            </section>
+        </main>
+        <footer class="footer">
+            <p class="footer__autor">&copy; 2020 Mesto Russia</p>
+        </footer>
+    </div>
+    <script src="./scripts/index.js"></script>
+</body>
+</html>

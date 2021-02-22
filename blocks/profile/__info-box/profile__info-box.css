@@ -1,0 +1,8 @@
+.profile__info-box{
+    display:flex;
+}
+@media screen and (max-width:768px){
+    .profile__info-box{
+        display:block;
+    }
+}

@@ -1,0 +1,20 @@
+.profile__editt-botton{
+    background-image: url(../../../images/icons/Edit-Button.svg);
+    width: 24px;
+    height: 24px;
+    border: none;
+    background-color:black;
+    margin-left:18px;
+}
+.profile__editt-botton:hover{
+    opacity: 0.6;
+    cursor: pointer;
+}
+@media screen and (max-width:768px){
+    .profile__editt-botton{
+        width: 18px;
+        height: 18px;
+        background-size: cover;
+        margin-left:10px;
+    }
+}

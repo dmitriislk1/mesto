@@ -1,0 +1,19 @@
+.popup__exit{
+    position: absolute;
+    width: 48.28px;
+    height: 48.28px;
+    right: -40px;
+    top: -40px;
+}
+.popup__exit:hover{
+    opacity: 0.6;
+    cursor: pointer;
+}
+@media screen and (max-width:880px){
+    .popup__exit{
+        width: 36.76px;
+        height: 36.76px;
+        right: 0;
+        top: -50.38px;
+    }
+}
