@@ -5,7 +5,7 @@
     border: none;
     background-color:black;
     margin-left:18px;
-    background-size: cover;
+    background-size: contain;
 }
 .profile__editt-botton:hover{
     opacity: 0.6;
