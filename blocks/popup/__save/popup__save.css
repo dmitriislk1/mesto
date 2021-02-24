@@ -4,12 +4,13 @@
     color: #fff;
     width: 358px;
     height: 50px;
-    font-family: Inter;
+    font-family: Inter, 'Helvetica Neue', Arial, sans-serif;
     font-style: normal;
     font-weight: normal;
     font-size: 18px;
     line-height: 22px;
     border-radius: 2px;
+    margin-bottom: 37px;
 }
 .popup__save:hover{
     opacity: 0.8;
@@ -21,5 +22,6 @@
        height: 46px;
        font-size: 14px;
        line-height: 17px;
+       margin-bottom: 25px;
     }
 }

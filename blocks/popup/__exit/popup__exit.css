@@ -4,6 +4,11 @@
     height: 48.28px;
     right: -40px;
     top: -40px;
+    background-image: url(../../../images/icons/cross.svg);
+    background-color:rgb(0, 0, 0, 0);
+    background-size: contain;
+    border: none;
+    outline: none;
 }
 .popup__exit:hover{
     opacity: 0.6;
