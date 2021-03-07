@@ -9,6 +9,7 @@
     background-size: contain;
     border: none;
     outline: none;
+    padding: 0;
 }
 .popup__exit:hover{
     opacity: 0.6;

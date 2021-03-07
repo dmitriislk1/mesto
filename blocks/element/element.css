@@ -1,4 +1,6 @@
 .element{
+    position: relative;
+    height: 361px;
     width: 282px;
     background-color:#fff;
     border-radius: 10px;
