@@ -23,8 +23,8 @@
             <button type="button" class="popup__exit"></button>
             <h2 class="popup__title">Новое место</h2>
             <form class="popup__form" name="new-card">
-                <input type="text" name="new-location" class="popup__input popup__input_type_locatio">
-                <input type="text" name="new-link" class="popup__input popup__input_type_link">
+                <input type="text" name="new-location" placeholder="Название" class="popup__input popup__input_type_locatio">
+                <input type="text" name="new-link" placeholder="Ссылка на картинку" class="popup__input popup__input_type_link">
                 <button type="submit" class="popup__save">Создать</button>
             </form>
         </div>
@@ -42,7 +42,7 @@
                     <div class="profile__info">
                         <div class="profile__flex-box">
                             <h1 class="profile__name">Жак-Ив Кусто</h1>
-                            <button type="button" class="profile__editt-botton"></button>
+                            <button type="button" class="profile__editt-button"></button>
                         </div>
                         <p class="profile__profession">Исследователь океана</p>
                     </div>
@@ -59,15 +59,15 @@
             <p class="footer__autor">&copy; 2020 Mesto Russia</p>
         </footer>
     </div>
+    <div class="popup popup_type_image">
+        <div class="popup__card-container">
+            <button type="button" class="popup__exit"></button>
+            <img src="#" alt="" class="popup__image">
+            <p class="popup__text"></p>
+        </div>
+    </div>
     <template id="element">
         <li class="element">
-            <div class="popup">
-                <div class="popup__card-container">
-                    <button type="button" class="popup__exit"></button>
-                    <img src="#" alt="" class="popup__image">
-                    <p class="popup__text"></p>
-                </div>
-            </div>
             <img src="#" alt="" class="element__image">
             <button class="element__delete"></button>
             <div class="element__info">

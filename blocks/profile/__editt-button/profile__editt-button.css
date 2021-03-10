@@ -1,4 +1,4 @@
-.profile__editt-botton{
+.profile__editt-button{
     background-image: url(../../../images/icons/Edit-Button.svg);
     border: 1px solid #FFFFFF;
     background-color:black;
@@ -9,12 +9,12 @@
     min-width: 24px;
     height: 24px;
 }
-.profile__editt-botton:hover{
+.profile__editt-button:hover{
     opacity: 0.6;
     cursor: pointer;
 }
 @media screen and (max-width:768px){
-    .profile__editt-botton{
+    .profile__editt-button{
         min-width: 18px;
         height: 18px;
         margin-left:10px;
