@@ -1,9 +1,12 @@
 //открытие попапа редактирования имени профиля
 const popupEdit = document.querySelector('.popup_type_edit');
 
+
+//открытие принимаемого попапа
 function openPopup(popup){
   popup.classList.add('popup_opened');
 }
+//закрытие принимаемого попапа
 function exitPopup(popup){
   popup.classList.remove('popup_opened');
 }
@@ -17,19 +20,39 @@ const inputProfession = formElement.querySelector(".popup__input_type_profession
 
 const editExit = popupEdit.querySelector('.popup__exit');
 
+const ErrorEditMesageList = popupEdit.querySelectorAll('.popup__input-error')
+//открытие попапа редактирования профиля
 function openEditProfilePopup(){
     openPopup(popupEdit);
-    
     inputName.value = profileName.textContent;
-    
     inputProfession.value = profileProfession.textContent;
-    
+    ErrorEditMesageList.forEach(function(evt){
+      evt.textContent = '';
+      evt.classList.remove('popup__error_visible');
+    });
 }
 const editButton = document.querySelector('.profile__editt-button');
 editButton.addEventListener('click', openEditProfilePopup);
-//закрытие попапа
-editExit.addEventListener('click', () =>{
+//закрытие попапа редактирования
+function exitEditPopup(){
+  inputName.classList.remove('popup__input_type_error');
+  inputProfession.classList.remove('popup__input_type_error');
   exitPopup(popupEdit);
+}
+editExit.addEventListener('click', () =>{
+  exitEditPopup();
+});
+//закрытие попапа редактирования про нажатии на пустоту
+popupEdit.addEventListener('click',function(evt){
+  if(evt.target.classList.contains('popup')){
+    exitEditPopup();
+  }
+});
+//закрытие попапа клавишей esc
+document.addEventListener('keydown', function(evt){
+  if(evt.key === 'Escape'){
+    exitEditPopup();
+  }
 });
 //обработка сохранения формы
 function editProfileFormSubmitHandle (evt) {
@@ -38,7 +61,7 @@ function editProfileFormSubmitHandle (evt) {
     const job = inputProfession.value;
     profileName.textContent = name;
     profileProfession.textContent = job;
-    exitPopup(popupEdit);
+    exitEditPopup();
 }
 formElement.addEventListener('submit', editProfileFormSubmitHandle); 
 //список начальных карточек
@@ -79,6 +102,16 @@ const imagePopupCloseBtn = popupCardImage.querySelector('.popup__exit');
 imagePopupCloseBtn.addEventListener('click', function(){
   exitPopup(popupCardImage);
 })
+popupCardImage.addEventListener('click',function(evt){
+  if(evt.target.classList.contains('popup')){
+    exitPopup(popupCardImage);
+  }
+});
+document.addEventListener('keydown', function(evt){
+  if(evt.key === 'Escape'){
+    exitPopup(popupCardImage);
+  }
+});
 initialCards.forEach(function(item){
       const newCard = createCard(item.name, item.link);
       cardList.append(newCard);
@@ -94,11 +127,31 @@ const formElementCreat = popupAddCard.querySelector(".popup__form");
 const formLocation = formElementCreat.querySelector('.popup__input_type_locatio');
 const formLink = formElementCreat.querySelector('.popup__input_type_link');
 const addCardPopupCloseBtn = popupAddCard.querySelector('.popup__exit');
+const ErrorAddMesageList = popupAddCard.querySelectorAll('.popup__input-error')
 
-addCardPopupCloseBtn.addEventListener('click', function(){
+function exitPopupAddCard(){
   exitPopup(popupAddCard);
   formLocation.value='';
   formLink.value='';
+  formLocation.classList.remove('popup__input_type_error');
+  formLink.classList.remove('popup__input_type_error');
+  ErrorAddMesageList.forEach(function(evt){
+    evt.textContent = '';
+    evt.classList.remove('popup__error_visible');
+  });
+}
+popupAddCard.addEventListener('click',function(evt){
+  if(evt.target.classList.contains('popup')){
+    exitPopupAddCard()
+  }
+});
+document.addEventListener('keydown', function(evt){
+  if(evt.key === 'Escape'){
+    exitPopupAddCard()
+  }
+});
+addCardPopupCloseBtn.addEventListener('click', function(){
+  exitPopupAddCard()
 });
 
 //обработка формы и создание карточки
@@ -109,9 +162,7 @@ function addCardFormSubmitHandler (evt) {
     const link = formLink.value;
     const newCard = createCard(name, link);
     cardList.prepend(newCard);
-    formLocation.value='';
-    formLink.value='';
-    exitPopup(popupAddCard);
+    exitPopupAddCard();
 }
 formElementCreat.addEventListener('submit', addCardFormSubmitHandler); 
 
