@@ -17,7 +17,9 @@ function closeByEscape(evt) {
     exitPopup(openedPopup);
   }
 }
-
+function createCard(name, link, selector){
+  return new Card(name, link, selector);
+}
 //открытие принимаемого попапа
 function openPopup(popup){
   popup.classList.add('popup_opened');
@@ -43,8 +45,8 @@ const editExit = popupEdit.querySelector('.popup__exit');
 const errorEditMesageList = popupEdit.querySelectorAll('.popup__input-error');
 //открытие попапа редактирования профиля
 function openEditProfilePopup(){
-    inputName.classList.remove('popup__input_type_error');
-    inputProfession.classList.remove('popup__input_type_error');
+    editFormValidator.resetValidation();
+    
     openPopup(popupEdit);
     inputName.value = profileName.textContent;
     inputProfession.value = profileProfession.textContent;
@@ -123,7 +125,7 @@ popupCardImage.addEventListener('click',function(evt){
 });
 
 initialCards.forEach(function(item){
-      const newCard = new Card(item.name, item.link, '#element');
+      const newCard = createCard(item.name, item.link, '#element');
       cardList.append(newCard.generateCard());
 });
 
@@ -141,8 +143,8 @@ const errorAddMesageList = popupAddCard.querySelectorAll('.popup__input-error')
 addCardPopupOpenBtn.addEventListener('click', function(){
   formLocation.value='';
   formLink.value='';
-  formLocation.classList.remove('popup__input_type_error');
-  formLink.classList.remove('popup__input_type_error');
+  creatFormValidator.resetValidation();
+  
   errorAddMesageList.forEach(function(evt){
     evt.textContent = '';
     evt.classList.remove('popup__error_visible');
@@ -166,10 +168,10 @@ function addCardFormSubmitHandler (evt) {
     evt.preventDefault(); 
     const name =  formLocation.value;
     const link = formLink.value;
-    const newCard = new Card(name, link, '#element');
+    const newCard = createCard(name, link, '#element');
     cardList.prepend(newCard.generateCard());
     exitPopup(popupAddCard);
 }
 formElementCreat.addEventListener('submit', addCardFormSubmitHandler); 
 
-export {popupCardImage, popupImage, popupText, openPopup}
+export {popupCardImage, popupImage, popupText, openPopup} 
