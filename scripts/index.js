@@ -50,10 +50,7 @@ function openEditProfilePopup(){
     openPopup(popupEdit);
     inputName.value = profileName.textContent;
     inputProfession.value = profileProfession.textContent;
-    errorEditMesageList.forEach(function(evt){
-      evt.textContent = '';
-      evt.classList.remove('popup__error_visible');
-    });
+    
 }
 const editButton = document.querySelector('.profile__editt-button');
 editButton.addEventListener('click', openEditProfilePopup);
@@ -145,10 +142,6 @@ addCardPopupOpenBtn.addEventListener('click', function(){
   formLink.value='';
   creatFormValidator.resetValidation();
   
-  errorAddMesageList.forEach(function(evt){
-    evt.textContent = '';
-    evt.classList.remove('popup__error_visible');
-  });
   openPopup(popupAddCard);
 });
 
