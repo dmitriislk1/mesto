@@ -1,16 +1,16 @@
-import {popupExitSelector} from '../utils/constants.js';
+
 export default class Popup{
     constructor(popupSelector){
         this._popup = document.querySelector(popupSelector);
+        this._handleEscClose = this._handleEscClose.bind(this);
     }
     open(){
         this._popup.classList.add('popup_opened');
-        document.addEventListener('keydown', (evt)=>{
-            this._handleEscClose(evt);
-        });
+        window.addEventListener('keydown', this._handleEscClose);
     }
     close(){
         this._popup.classList.remove('popup_opened')
+        window.removeEventListener('keydown', this._handleEscClose);
     }
     _handleEscClose(evt){
         if (evt.key === 'Escape') {
@@ -18,7 +18,7 @@ export default class Popup{
         }
     }
     setEventListeners(){
-        this._closePopupBtn = this._popup.querySelector(popupExitSelector);
+        this._closePopupBtn = this._popup.querySelector('.popup__exit');
         this._closePopupBtn.addEventListener('click', ()=>{
             this.close();
         })

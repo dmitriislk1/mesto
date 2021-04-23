@@ -37,3 +37,8 @@ export const initialCards = [
   export const editProfilePopupOpenBtn = document.querySelector('.profile__editt-button');
   export const profileNameSelector = '.profile__name';
   export const profileProfessionSelector = '.profile__profession';
+  export const cardSelector = '#element';
+  export const popupImageSelector = '.popup_type_image';
+  export const popupEditSelector = '.popup_type_edit';
+  export const popupCreatingSelector = '.popup_type_creating';
+ 
