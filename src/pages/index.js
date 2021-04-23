@@ -11,7 +11,9 @@ import {initialCards,
   cardSelector,
   popupImageSelector,
   popupEditSelector,
-  popupCreatingSelector
+  popupCreatingSelector,
+  popupInputNameSelector,
+  popupInputProfessionSelector
 } from '../utils/constants.js';
 import Section from '../components/Section.js';
 import PopupWithForm from '../components/PopupWithForm.js';
@@ -76,8 +78,8 @@ const editFormValidator = new FormValidator(defaultFormConfig, editProfilePopup.
 editFormValidator.enableValidation();
 
 
-const inputName = editProfilePopup.getPopupForm().querySelector('.popup__input_type_name');
-const inputProfession = editProfilePopup.getPopupForm().querySelector('.popup__input_type_profession');
+const inputName = editProfilePopup.getPopupForm().querySelector(popupInputNameSelector);
+const inputProfession = editProfilePopup.getPopupForm().querySelector(popupInputProfessionSelector);
 //наложение слушателя нажатия кнопки открытия попапа редактирования профиля
 editProfilePopupOpenBtn.addEventListener('click', ()=>{
   const infoList = editProfile.getUserInfo();

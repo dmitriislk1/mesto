@@ -41,4 +41,5 @@ export const initialCards = [
   export const popupImageSelector = '.popup_type_image';
   export const popupEditSelector = '.popup_type_edit';
   export const popupCreatingSelector = '.popup_type_creating';
- 
+  export const popupInputNameSelector = '.popup__input_type_name';
+  export const popupInputProfessionSelector = '.popup__input_type_profession';
