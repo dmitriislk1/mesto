@@ -20,15 +20,24 @@ import PopupWithForm from '../components/PopupWithForm.js';
 import PopupWithImage from '../components/PopupWithImage.js';
 import UserInfo from '../components/UserInfo.js';
 
+
+// функция сохдания карточки
+function createCard(data, cardSelector){
+  const card = new Card({data, handleCardClick: ()=>{
+     imagePopup.open({link: data.link, name: data.name })
+    }
+  },cardSelector);
+  return card;
+}
+
+
+
+
 const imagePopup = new PopupWithImage(popupImageSelector);//попап изображения
 imagePopup.setEventListeners();
 //создание дефолтных карточек из списка
 const cardList = new Section({items: initialCards, renderer: (item)=>{
-      const card = new Card({data: item, handleCardClick: ()=>{
-        imagePopup.open({link: item.link, name: item.name })
-        
-      }
-    },cardSelector);
+      const card  = createCard(item, cardSelector);
       return card.generateCard();
     }
   },containerSelector
@@ -39,10 +48,7 @@ cardList.renderItems();
 const addCardPopup  = new PopupWithForm(popupCreatingSelector, (inputValues)=>{
   const cardName = inputValues.location;
   const cardLink = inputValues.link;
-  const newCard = new Card({data: {link: cardLink, name: cardName}, handleCardClick: ()=>{
-    imagePopup.open({link: cardLink, name: cardName});
-  }
-}, cardSelector);
+  const newCard = createCard({link: cardLink, name: cardName}, cardSelector);
   cardList.addItem(newCard.generateCard());
   addCardPopup.close();
   
