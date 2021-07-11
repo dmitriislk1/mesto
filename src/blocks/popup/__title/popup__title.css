@@ -8,6 +8,9 @@
     line-height: 29px;
     margin: 34px auto 54px auto;
 }
+.popup_type_confirmation .popup__title{
+    margin-bottom: 38px;
+}
 @media screen and (max-width: 880px){
     .popup__title{
         width: 238px;
@@ -16,3 +19,4 @@
         margin: 25px auto 75px auto;
     }
 }
+

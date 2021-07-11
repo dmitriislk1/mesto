@@ -8,6 +8,7 @@
     outline: none;
     width: 22px;
     height: 19px;
+    margin-bottom: 3px;
 }
 .element__heart:hover{
     opacity:0.5;

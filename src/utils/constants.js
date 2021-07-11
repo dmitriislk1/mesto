@@ -38,6 +38,7 @@ export const initialCards = [
   export const profileNameSelector = '.profile__name';
   export const profileProfessionSelector = '.profile__profession';
   export const cardSelector = '#element';
+  export const popupDeletCardSelector = ".popup_type_confirmation";
   export const popupImageSelector = '.popup_type_image';
   export const popupEditSelector = '.popup_type_edit';
   export const popupCreatingSelector = '.popup_type_creating';
